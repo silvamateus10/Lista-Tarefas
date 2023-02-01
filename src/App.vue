@@ -8,9 +8,9 @@
         dark
         class="pt-5 text-center"
       >
-        <v-avatar size="100">
+        <!-- <v-avatar size="100">
           <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="" />
-        </v-avatar>
+        </v-avatar> -->
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title class="text-h6">
