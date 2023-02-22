@@ -22,4 +22,7 @@ export default {
     state.tarefas = state.tarefas.filter((tarefa) => tarefa.id !== id);
     db.collection("tarefas").doc({ id: id }).delete();
   },
+  limparTarefa() {
+    db.collection("tarefas").delete();
+  },
 };

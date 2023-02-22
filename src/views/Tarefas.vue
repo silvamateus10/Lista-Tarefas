@@ -12,7 +12,7 @@
     <ListaTarefas />
     <div v-if="!$store.state.tarefas.length" class="text-center mt-16 animate__animated animate__bounceIn">
       <v-icon size="100" color="primary"> mdi-check </v-icon>
-      <div class="text-h5">Nenhuma tarfera</div>
+      <div class="text-h5">Nenhuma tarefa</div>
     </div>
   </div>
 </template>
