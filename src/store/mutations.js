@@ -8,7 +8,7 @@ export default {
       .then((tarefasDB) => {
         state.tarefas = tarefasDB;
       });
-  },
+    },
   adicionaTarefa(state, titulo) {
     if (titulo) {
       db.collection("tarefas").add({
@@ -24,5 +24,18 @@ export default {
   },
   limparTarefa() {
     db.collection("tarefas").delete();
+  },
+  
+  async limparTarefaConcluidas() { 
+    try {
+      const tarefasDB = await db.collection("tarefas").get();
+      for (const tarefa of tarefasDB) {
+        if (tarefa.concluido === true) {
+          await db.collection("tarefas").doc({ id: tarefa.id }).delete();
+        }
+      }
+    } catch (error) {
+      console.error("Erro ao limpar tarefas concluídas:", error);
+    }
   },
 };
